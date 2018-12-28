@@ -1,0 +1,102 @@
+<form [formGroup]="employeeDetailsForm" (ngSubmit)="employeeDetailsForm.valid && addMember(employeeDetailsForm)">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="empName" placeholder="Employee Name" required>
+        <mat-error *ngIf="employeeDetailsForm.controls['empName'].errors?.required" required>
+          Enter Employee Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="empNo" placeholder="Employee No" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['empNo'].errors?.required" required>
+          Enter Employee No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="gender" placeholder="Gender" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['gender'].errors?.required">
+          Enter Gender
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber" placeholder="Mobile Number" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['mobileNumber'].errors?.required">
+          Enter Mobile No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" placeholder="Email" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['email'].errors?.required">
+          Enter Email
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="whatsAppNo" placeholder="WhatsApp No" [required]="false">
+
+        <mat-error *ngIf="employeeDetailsForm.controls['whatsAppNo'].errors?.required">
+          Enter Whatsapp No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="dateOfBirth" placeholder="Date Of Birth" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['dateOfBirth'].errors?.required">
+          Enter Date Of Birth
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="dateOfJoin" placeholder="Date Of Join" [required]="false">
+          <mat-error *ngIf="employeeDetailsForm.controls['dateOfJoin'].errors?.required">
+            Enter Date Of Join
+            <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="designation" placeholder="Designation" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['designation'].errors?.required">
+          Enter Designation
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="address" formControlName="address" [required]="false">
+        <mat-error *ngIf="employeeDetailsForm.controls['address'].errors?.required">
+          Enter Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

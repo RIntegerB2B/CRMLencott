@@ -1,0 +1,78 @@
+<form [formGroup]="interB2cMarketDetailsForm">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="customerName" [ngModel]="data.customerName" (ngModelChange)="data.customerName=$event"
+          placeholder="Customer Name">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="countryCode" [ngModel]="data.countryCode" (ngModelChange)="data.countryCode=$event"
+          placeholder="Country Code" required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="gender" [ngModel]="data.gender" (ngModelChange)="data.gender=$event"
+          placeholder="Gender">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber" [ngModel]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event"
+          placeholder="Mobile Number">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" [ngModel]="data.email" (ngModelChange)="data.email=$event" name="email"
+          placeholder="email">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="dateOfBirth" [ngModel]="data.dateOfBirth" (ngModelChange)="data.dateOfBirth=$event"
+          name="dateOfBirth" placeholder="Date Of Birth">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="designation" [ngModel]="data.designation" (ngModelChange)="data.designation=$event"
+          name="designation" placeholder="Date Of Birth">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="location" [ngModel]="data.location" (ngModelChange)="data.location=$event"
+          name="location" placeholder="location">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="categoryType" [ngModel]="data.categoryType" (ngModelChange)="data.categoryType=$event"
+          name="categoryType" placeholder="Category Type">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="country" [ngModel]="data.country" (ngModelChange)="data.country=$event"
+          placeholder="Country" required>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="nationality" [ngModel]="data.nationality" (ngModelChange)="data.nationality=$event"
+          name="nationality" placeholder="nationality">
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary" (click)="updateInterB2cMarketCustomer(interB2cMarketDetailsForm, data)">Save</button>
+      <span fxFlex></span>
+      <button mat-button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

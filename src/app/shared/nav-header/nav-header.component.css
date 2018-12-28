@@ -1,0 +1,15 @@
+.expandMenuBar{
+    opacity: 1;
+    display: block;
+}
+.collapseMenuBar{
+    opacity: 0;
+    display: none;
+}
+table {
+    width: 100%;
+  }
+.mat-cell
+{
+    font-size: 0.8rem;
+}

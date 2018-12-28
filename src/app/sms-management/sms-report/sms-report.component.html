@@ -1,0 +1,73 @@
+<form style="padding-top:20px">
+  <div fxLayoutAlign="center center" style="padding-top: 10px">
+    <div class="textHeader">
+      <h4>SMS REPORT</h4>
+    </div>
+  </div>
+  <div class="pageBoxLg">
+    <div class="row gridRowHeader display-none-small">
+      <div class="col-md-2 vcenterHeader">
+        <div class="form-group">
+          <label>SMS Header</label>
+        </div>
+      </div>
+      <div class="col-md-2 vcenterHeader">
+        <div class="form-group">
+          <label>SMS Body</label>
+        </div>
+      </div>
+      <div class="col-md-2 vcenterHeader">
+        <div class="form-group">
+          <label>SMS Status</label>
+        </div>
+      </div>
+      <div class="col-md-2 vcenterHeader">
+        <div class="form-group">
+          <label>Date</label>
+        </div>
+      </div>
+      <div class="col-md-2 vcenterHeader">
+        <div class="form-group">
+          <label>Mobile Numbers</label>
+        </div>
+      </div>
+    </div>
+    <div *ngFor="let data of smsReport">
+      <div class="row gridRow">
+        <div class="display-none-large col-6">
+          <label class="gridLabel">SMS Header:</label>
+        </div>
+        <div class="col-md-2 col-6 vcenter form-group">
+          {{data.smsHeader}}
+        </div>
+        <div class="display-none-large col-6">
+          <label class="gridLabel">SMS Body:</label>
+        </div>
+        <div class="col-md-2  textWrap  col-6 vcenter form-group">
+          {{data?.smsBody}}
+        </div>
+        <div class="display-none-large col-6">
+          <label class="gridLabel">SMS Status:</label>
+        </div>
+        <div class="col-md-2 col-6 vcenter form-group">
+          <label> {{data?.smsStatus}}</label>
+        </div>
+        <div class="display-none-large col-6">
+          <label class="gridLabel">Date:</label>
+        </div>
+        <div class="col-md-2 col-6 vcenter form-group">
+          <label>{{data?.date | date: 'dd/MM/yyyy' }}</label>
+        </div>
+        <div class="display-none-large col-6">
+          <label class="gridLabel">Mobile Numbers:</label>
+        </div>
+        <div class="col-md-2 col-6 vcenter form-group">
+          <button mat-raised-button color="primary" (click)="viewSmsDetails(data)">view</button>
+        </div>
+      </div>
+    </div>
+    <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[10, 20, 30, 40, 50]" [showFirstLastButtons]="true"
+      [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)">
+    </mat-paginator>
+  </div>
+</form>

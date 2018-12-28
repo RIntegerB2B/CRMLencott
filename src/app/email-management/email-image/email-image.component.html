@@ -1,0 +1,26 @@
+<div class="container pt-5">
+  <div class="row">
+    <div class="col-md-4">
+      <img class="img-fluid" [src]="showImage">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="file">Upload Images</label>
+
+    <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+
+    <button mat-raised-button (click)="uploadSingleImage()" color="accent">Save</button>
+  </div>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let filePath of imageAll">
+      {{filePath.imageName}}
+      <div class="gridRow">
+        <img class="img-fluid" [src]="filePath.imagePath">
+      </div>
+      <button mat-raised-button color="warn"
+       (click)="deleteSingleImage(filePath)">
+          Delete
+      </button>  
+    </div>
+  </div>
+</div>

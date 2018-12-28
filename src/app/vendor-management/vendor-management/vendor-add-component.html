@@ -1,0 +1,123 @@
+<form [formGroup]="vendorDetailsForm"
+ (ngSubmit)="vendorDetailsForm.valid && 
+addMember(vendorDetailsForm)">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="vendorName" placeholder="Vendor Name" required>
+        <mat-error *ngIf="vendorDetailsForm.controls['vendorName'].errors?.required" required>
+          Vendor Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber" placeholder="Mobile Number" required>
+        <mat-error *ngIf="vendorDetailsForm.controls['mobileNumber'].errors?.required">
+          Enter Mobile No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" placeholder="Email" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['email'].errors?.required">
+          Enter Email
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="whatsAppNo" placeholder="WhatsApp No " [required]="false">
+
+        <mat-error *ngIf="vendorDetailsForm.controls['whatsAppNo'].errors?.required">
+          Enter Whatsapp No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="landLine" placeholder="landLine No" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['landLine'].errors?.required" required>
+          Enter landLine No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="vendorService" placeholder="Vendor Service" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['vendorService'].errors?.required">
+          Enter Date Of Birth
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div> 
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="vendorCompanyName" placeholder="Vendor CompanyName" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['vendorCompanyName'].errors?.required">
+          Enter Vendor Company Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Company Address" formControlName="companyAddress" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['companyAddress'].errors?.required">
+          Enter Company Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Address" formControlName="address" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['address'].errors?.required">
+          Enter Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Location" formControlName="location" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['location'].errors?.required">
+          Enter Vendor Grade
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Gst Number" formControlName="gstNumber" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['gstNumber'].errors?.required">
+          Enter GST
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="vendorGrade" formControlName="vendorGrade" [required]="false">
+        <mat-error *ngIf="vendorDetailsForm.controls['vendorGrade'].errors?.required">
+          Enter Vendor Grade
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

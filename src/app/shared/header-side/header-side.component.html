@@ -1,0 +1,340 @@
+<!-- Navigation -->
+<!-- [ngClass]="headerSideService.menuTransparent" -->
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches" *ngIf="!shouldRun">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h5 class="textHeader ">{{ role.userName }}</h5>
+    <span class="example-spacer"></span>
+    <span flex></span>
+    
+    <span class="example-spacer"></span>
+    
+    <span flex></span>
+    <span flex></span>
+    <button (click)="logout()" mat-icon-button>
+      <small>Logout</small>
+    </button>
+  </mat-toolbar>
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+          <span *ngIf="isExpanded || isShowing">National DB Mgmt</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="showSubmenu">
+          <div id="scroll-area" class="navigation-hold" fxLayout="column">
+            <!-- *ngFor="let data of role.menuList"  -->
+            <!-- *ngFor="let menus of role.menuList" -->
+            <div class="sidenav-hold" *ngFor="let menus of role.menuList">
+              <ul class="sidenav">
+                <!-- *ngIf="data.b2bCustomerPermission" -->
+
+                <li *ngIf="menus?.b2bCustomerPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['b2bcustomer']">
+                    <a matRipple class="nav-item-sep">
+                      <mat-icon>group</mat-icon>
+                      <span>B2B CUSTOMER DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <!--  -->
+                <li *ngIf="menus?.b2bMarketPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                          true}"
+                    [routerLink]="['b2bmarket']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">B2B MARKETING DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.b2cCustomerPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                              true}"
+                    [routerLink]="['b2ccustomer']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">B2C CUSTOMER DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.b2cMarketPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['b2cmarket']">
+                    <a matRipple class="nav-item-sep">
+                      <mat-icon>group</mat-icon>
+                      <span>
+                        B2C MARKETING DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+
+                <li *ngIf="menus?.employeePermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['employee']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">EMPLOYEE DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.vendorPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['vendor']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">VENDOR DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.agentPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                              true}"
+                    [routerLink]="['agent']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">AGENT DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.othersPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                          true}"
+                    [routerLink]="['others']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">OTHERS DB</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.uploadPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                      true}"
+                    [routerLink]="['upload']">
+                    <a matRipple>
+                      <mat-icon>cloud_upload</mat-icon>
+                      <span class="item-name">UPLOAD</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.reportPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['report']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">REPORT</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <mat-list-item (click)="showInternational = !showInternational" class="parent">
+          <span *ngIf="isExpanded || isShowing">International DB Mgmt</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showInternational}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showInternational}" *ngIf="showInternational">
+          <div id="scroll-area" class="navigation-hold" fxLayout="column">
+            <div class="sidenav-hold" *ngFor="let menus of role.menuList">
+              <ul class="sidenav">
+                <li *ngIf="menus.interB2bCustomerPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                            true}"
+                    [routerLink]="['interb2bcustomer']">
+                    <a matRipple class="nav-item-sep">
+                      <mat-icon>group</mat-icon>
+                      <span>B2BCUSTOMER</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.interB2bMarketPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                              true}"
+                    [routerLink]="['interb2bmarket']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">B2BMARKETING</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+
+                <li *ngIf="menus?.interB2cCustomerPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                            true}"
+                    [routerLink]="['interb2ccustomer']">
+                    <a matRipple>
+                      <mat-icon>group</mat-icon>
+                      <span class="item-name">B2CCUSTOMER</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.interB2cMarketPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                              true}"
+                    [routerLink]="['interb2cmarket']">
+                    <a matRipple class="nav-item-sep">
+                      <mat-icon>group</mat-icon>
+                      <span>B2CMARKETING</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.interUploadPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                          true}"
+                    [routerLink]="['interupload']">
+                    <a matRipple>
+                      <mat-icon>cloud_upload</mat-icon>
+                      <span class="item-name">UPLOAD</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+          <span *ngIf="isExpanded || isShowing">Marketing Mgmt</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="showSubSubMenu">
+          <div id="scroll-area" class="navigation-hold" fxLayout="column">
+            <div class="sidenav-hold" *ngFor="let menus of role.menuList">
+              <ul class="sidenav">
+                <li *ngIf="menus?.smsMenuPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLink]="['sms']" [routerLinkActiveOptions]="{exact:
+                        true}">
+                    <a matRipple>
+                      <mat-icon>message</mat-icon>
+                      <span class="item-name">SMS</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.smsMenuPermission">
+                    <div [routerLinkActive]="['activeLink']"
+                     [routerLink]="['smsreport']"
+                      [routerLinkActiveOptions]="{exact:
+                          true}">
+                      <a matRipple>
+                        <mat-icon>message</mat-icon>
+                        <span class="item-name">SMS Report</span>
+                        <span fxFlex></span>
+                      </a>
+                    </div>
+                  </li>
+               <!--  <li *ngIf="menus?.emailMenuPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['email']">
+                    <a matRipple>
+                      <mat-icon>email</mat-icon>
+                      <span class="item-name">EMAIL</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <mat-list-item (click)="showSetting = !showSetting" class="parent">
+          <span *ngIf="isExpanded || isShowing">Settings</span>
+          <mat-icon class="menu-button" [ngClass]="{'rotated' : showSetting}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+        </mat-list-item>
+        <div class="submenu" [ngClass]="{'expanded' : showSetting}" *ngIf="showSetting">
+          <div id="scroll-area" class="navigation-hold" fxLayout="column">
+            <div class="sidenav-hold">
+              <ul class="sidenav" *ngFor="let menus of role.menuList">
+                <li *ngIf="menus?.registerPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                              true}"
+                    [routerLink]="['register']">
+                    <a matRipple>
+                      <mat-icon>subject</mat-icon>
+                      <span class="item-name">REGISTER</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.userPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                                true}"
+                    [routerLink]="['permission']">
+                    <a matRipple>
+                      <mat-icon>lock_outline</mat-icon>
+                      <span class="item-name">USER PERMISSION</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.messagePermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                          true}"
+                    [routerLink]="['message']">
+                    <a matRipple>
+                      <mat-icon>message</mat-icon>
+                      <span class="item-name">MESSAGE SETTING</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+                <li *ngIf="menus?.messagePermission">
+                    <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                            true}"
+                      [routerLink]="['emailImage']">
+                      <a matRipple>
+                        <mat-icon>email</mat-icon>
+                        <span class="item-name">EMAIL SETTING</span>
+                        <span fxFlex></span>
+                      </a>
+                    </div>
+                  </li>
+                <li *ngIf="menus?.backupPermission">
+                  <div [routerLinkActive]="['activeLink']" [routerLinkActiveOptions]="{exact:
+                        true}"
+                    [routerLink]="['backup']">
+                    <a matRipple>
+                        <mat-icon>cloud_download</mat-icon>
+                      <span class="item-name">BACKUP</span>
+                      <span fxFlex></span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

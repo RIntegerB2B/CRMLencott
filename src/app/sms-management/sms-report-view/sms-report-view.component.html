@@ -1,0 +1,60 @@
+  <div class="container">
+    <div class="row gridRowHeader">
+      <div class="col-md-12 text-center">
+        <h5>SMS Report</h5>
+      </div>
+    </div>
+    <div *ngFor="let report of data">
+      <div class="row gridRow">
+        <div class="col-md-6 col-6 vcenter form-group">
+          <div>
+            <label class="divLable">SMS Header</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          : {{report.smsHeader}}
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          <div>
+            <label class="divLable">SMS Body</label>
+          </div>
+        </div>
+        <div class="col-md-6 textWrap  col-6 vcenter form-group">
+          : {{report?.smsBody}}
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          <div>
+            <label class="divLable">SMS Status</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          : {{report?.smsStatus}}
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          <div class="form-group">
+            <label class="divLable">Date</label>
+          </div>
+        </div>
+        <div class="col-md-6 col-6 vcenter form-group">
+          : {{report?.date | date: 'dd/MM/yyyy' }}
+        </div>
+        <div class="col-md-12 col-6 vcenter form-group">
+          <div class="form-group">
+              <label class="divLable">Mobile Number :-</label>
+          </div>
+        </div>
+        <div class="col-md-12 textWrap col-6 form-group">
+          <!-- <p>: {{report?.mobileNumber}}</p> -->
+          {{report?.mobileNumber}}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+
+        </div>
+        <div class="col-md-2">
+          <button type="button" color="warn" mat-raised-button (click)="dialogRef.close(false)">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>

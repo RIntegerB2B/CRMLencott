@@ -1,0 +1,93 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.submenu li {
+  padding-left:15px;
+  padding-top: 5px;
+}
+ul li + .submenu {
+  display: block;
+}
+ul li.active + .submenu {
+  display: inline-block;
+  list-style: none;
+  background-color: blue;
+  }
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+.mat-list,
+.mat-nav-list,
+.mat-selection-list {
+  transition: transform .3s cubic-bezier(.35, 0, .25, 1);
+  width: 15rem;
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  flex: 1;
+}
+
+.example-is-mobile .example-sidenav-container {
+  flex: 1 0 auto;
+}
+
+.mat-sidenav {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  transition: all .0s cubic-bezier(.35, 0, .25, 1)
+}
+
+.activeLink
+{
+ background-color: #6610f2;
+ color: #ffff;
+}
+.activeLink1
+{
+ background-color: #6610f2;
+ color: #ffff;
+}
+.menuTransparent
+{
+  display: none;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.menu-button {
+  transition: 300ms ease-in-out;
+  transform: rotate(0deg);
+}
+.menu-button.rotated {
+  transform: rotate(180deg);
+}
+.submenu {
+  overflow-y: hidden;
+  transition: transform 300ms ease;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+.submenu.expanded {
+  transform: scaleY(1);
+}
+.parent
+{
+  
+  font-size: 14px;
+  font-weight: bolder;
+}
+.parent mat-icon
+{
+ margin-left: auto;
+}

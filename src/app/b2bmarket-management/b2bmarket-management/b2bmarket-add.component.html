@@ -1,0 +1,110 @@
+<form [formGroup]="b2bMarketDetailsForm" (ngSubmit)="b2bMarketDetailsForm.valid && addMember(b2bMarketDetailsForm)">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="customerName" placeholder="Customer Name" required>
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['customerName'].errors?.required" required>
+          Enter Customer Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber" placeholder="Mobile Number" required>
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['mobileNumber'].errors?.required">
+          Enter Mobile Number
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="whatsAppNo" placeholder="Whasapp No" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['whatsAppNo'].errors?.required">
+          Enter whatsApp No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="landLine" placeholder="Landline" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['landLine'].errors?.required">
+          Enter Land Line No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Location" formControlName="location" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['location'].errors?.required">
+          Enter Location
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" placeholder="Email" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['email'].errors?.required">
+          Enter email address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="companyName" placeholder="Company Name" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['companyName'].errors?.required">
+          Enter Company Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="companyAddress" placeholder="Company Address" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['companyAddress'].errors?.required">
+          Enter Company Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="gstNumber" placeholder="GST Number" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['gstNumber'].errors?.required">
+          Enter GST
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="customerGrade" placeholder="Company Grade" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['customerGrade'].errors?.required">
+          Enter Customer Grade
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="brandName" placeholder="Brand Name" [required]="false">
+        <mat-error *ngIf="b2bMarketDetailsForm.controls['brandName'].errors?.required">
+          Enter Brand Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

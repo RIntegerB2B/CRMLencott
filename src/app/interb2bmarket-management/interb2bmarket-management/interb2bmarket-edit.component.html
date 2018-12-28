@@ -1,0 +1,94 @@
+<form [formGroup]="interB2bMarketDetailsForm">
+    <div fxLayout="row wrap" fxLayout.lt-sm="column">
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="customerName" [ngModel]="data.customerName" (ngModelChange)="data.customerName=$event"
+            placeholder="Customer Name">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+          <mat-form-field class="full-width">
+            <input matInput   formControlName="countryCode" 
+            [ngModel]="data.countryCode" (ngModelChange)="data.countryCode=$event"
+              placeholder="Country Code" required>
+          </mat-form-field>
+        </div>
+
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="mobileNumber" [ngModel]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event"
+            placeholder="Mobile Number">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="whatsAppNo" placeholder="Whasapp No" required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="landLine" placeholder="Landline" required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+          <mat-form-field class="full-width">
+            <input matInput formControlName="email" [ngModel]="data.email" (ngModelChange)="data.email=$event" name="email"
+              placeholder="email">
+          </mat-form-field>
+        </div>
+  
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="location" [ngModel]="data.location" (ngModelChange)="data.location=$event"
+            name="location" placeholder="Location">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+          <mat-form-field class="full-width">
+            <input matInput   formControlName="country" 
+            [ngModel]="data.country" (ngModelChange)="data.country=$event"
+              placeholder="Country" required>
+          </mat-form-field>
+        </div>
+      
+  
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="companyName" placeholder="Company Name" [ngModel]="data.companyName"
+            (ngModelChange)="data.companyName=$event" name="companyName">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="companyAddress" placeholder="Company Address" [ngModel]="data.companyAddress"
+            (ngModelChange)="data.companyAddress=$event" name="companyName">
+  
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="gstNumber" placeholder="GST Number" required [ngModel]="data.gstNumber"
+            (ngModelChange)="data.gstNumber=$event" name="companyName">
+        </mat-form-field>
+      </div>
+  
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="customerGrade" placeholder="Company Grade" [ngModel]="data.customerGrade"
+            (ngModelChange)="data.customerGrade=$event" name="Customer Grade" required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="brandName" [ngModel]="data.brandName" (ngModelChange)="data.brandName=$event"
+            name="Brand Name" placeholder="Brand Name" required>
+        </mat-form-field>
+      </div>
+  
+      <div fxFlex="100" class="mt-1">
+        <button mat-raised-button color="primary" (click)="updateInterB2bMarketCustomer(interB2bMarketDetailsForm, data)">Save</button>
+        <span fxFlex></span>
+        <button mat-button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </form>

@@ -1,0 +1,125 @@
+<form [formGroup]="agentDetailsForm"
+ (ngSubmit)="agentDetailsForm.valid && 
+addMember(agentDetailsForm)">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentName"
+         placeholder="Agent Name" required>
+        <mat-error *ngIf="agentDetailsForm.controls['agentName'].errors?.required" required>
+          Agent Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber"
+         placeholder="Mobile Number" required>
+        <mat-error *ngIf="agentDetailsForm.controls['mobileNumber'].errors?.required">
+          Enter Mobile No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" placeholder="Email" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['email'].errors?.required">
+          Enter Email
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="whatsAppNo" placeholder="WhatsApp No " [required]="false">
+
+        <mat-error *ngIf="agentDetailsForm.controls['whatsAppNo'].errors?.required">
+          Enter Whatsapp No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="landLine" placeholder="landLine No" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['landLine'].errors?.required" required>
+          Enter landLine No
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentService" placeholder="Agent Service" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['agentService'].errors?.required">
+          Enter Date Of Birth
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div> 
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentCompanyName" placeholder="Agent CompanyName" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['agentCompanyName'].errors?.required">
+          Enter Agent Company Name
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Company Address" formControlName="companyAddress" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['companyAddress'].errors?.required">
+          Enter Company Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Address" formControlName="address" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['address'].errors?.required">
+          Enter Address
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Location" formControlName="location" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['location'].errors?.required">
+          Enter Agent Grade
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Gst Number" formControlName="gstNumber" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['gstNumber'].errors?.required">
+          Enter GST
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="agentGrade" formControlName="agentGrade" [required]="false">
+        <mat-error *ngIf="agentDetailsForm.controls['agentGrade'].errors?.required">
+          Enter Agent Grade
+          <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,49 @@
+<form [formGroup]="othersDetailsForm">
+        <div fxLayout="row wrap" fxLayout.lt-sm="column">
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="name" [ngModel]="data.name" (ngModelChange)="data.name=$event"
+                placeholder="Name">
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+              <mat-form-field class="full-width">
+                <input matInput formControlName="gender" [ngModel]="data.gender" (ngModelChange)="data.gender=$event"
+                  placeholder="Gender">
+              </mat-form-field>
+            </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="mobileNumber" [ngModel]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event"
+                placeholder="Mobile Number">
+            </mat-form-field>
+          </div>  
+      
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="email" [ngModel]="data.email" (ngModelChange)="data.email=$event" name="email"
+                placeholder="email">
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+                <mat-form-field class="full-width">
+                  <input matInput formControlName="location"
+                   [ngModel]="data.location" (ngModelChange)="data.location=$event" name="Location"
+                    placeholder="Location">
+                </mat-form-field>
+              </div>
+            <div fxFlex="50" class="pr-1">
+                <mat-form-field class="full-width">
+                  <input matInput formControlName="address"
+                   [ngModel]="data.address" (ngModelChange)="data.address=$event" name="Address"
+                    placeholder="Address">
+                </mat-form-field>
+              </div>
+          <div fxFlex="100" class="mt-1">
+            <button mat-raised-button color="primary" (click)="updateOthers(othersDetailsForm, data)">Save</button>
+            <span fxFlex></span>
+            <button mat-raised-button  color="warn" type="button" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+      </form>
+      

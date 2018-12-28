@@ -1,0 +1,116 @@
+<form [formGroup]="interB2bMarketDetailsForm">
+  <div fxLayoutAlign="center center" style="padding-top: 10px">
+    <div class="textHeader">
+      <h4>INTERNATIONAL B2B MARKET DETAILS</h4>
+    </div>
+  </div>
+  <div class="textHeader" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="text-center">
+      <h5>Total Customer</h5>
+      <button mat-mini-fab>
+        {{newCustomer.length}}
+      </button>
+    </div>
+    <div class="text-center" *ngFor="let data of role.interB2bMarket">
+      <h5>Add Customer</h5>
+      <button mat-mini-fab color="warn" [disabled]="!data.addPermission"
+      (click)="addInterB2bMarket(interB2bMarketDetailsForm, true)">
+        <mat-icon>add_box</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" 
+      (click)="getAllInterB2bMarketCustomer()">All
+        Customer</button>
+    </div>
+    <div>
+      <button mat-raised-button color="primary"
+       (click)="duplicateInterB2bMarketCustomer()">
+        Duplicate Customer</button>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="40%">
+    </div>
+    <div fxFlex="30%">
+      <mat-form-field>
+        <input matInput placeholder="Search" (keyup)='updateFilter($event)'>
+      </mat-form-field>
+    </div>
+    <div fxFlex="20%">
+        <div class="p-2" fxLayoutAlign="end center">
+            <select (change)="onLimitChange($event.target.value)">
+                <option
+                  *ngFor="let option of pageLimitOptions"
+                  [value]="option.value"
+                  [selected]="option.value == currentPageLimit"  >
+                  {{ option.value }} per page
+                </option>
+              </select> 
+        </div>
+    </div>
+  </div>
+  <div  *ngFor="let data of role.interB2bMarket">
+
+    <ngx-datatable #myTable class="material pl-5 ml-0 mr-0" [rows]="newCustomer" [columnMode]="'force'" [externalPaging]="false"
+      (select)="onSelect($event)" [headerHeight]="50" [footerHeight]="50" [draggable]="false" 
+      [limit]="10"
+      [rowHeight]="'auto'">
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="CUSTOMER NAME" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.customerName}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column  *ngIf="role.mobilePermission; else noCode" [sortable]="false" [draggable]="false" name="COUNTRY CODE" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row?.countryCode}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ng-template #noCode>
+            <ngx-datatable-column  [sortable]="false" [draggable]="false" name="COUNTRY CODE" [flexGrow]="1">
+                <ng-template  let-row="row" ngx-datatable-cell-template>
+                  **********
+                </ng-template>
+              </ngx-datatable-column>
+            </ng-template>
+      
+      <ngx-datatable-column  *ngIf="role.mobilePermission; else noMobile"  [sortable]="false" [draggable]="false" name="MOBILE NUMBER" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.mobileNumber}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ng-template #noMobile>
+          <ngx-datatable-column  [sortable]="false" [draggable]="false" name="MOBILE NUMBER" [flexGrow]="1">
+              <ng-template  let-row="row" ngx-datatable-cell-template>
+                **********
+              </ng-template>
+            </ngx-datatable-column>
+          </ng-template>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="LOCATION" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.location}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="EMAIL" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.email}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="EDIT" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+
+          <button mat-icon-button mat-sm-button
+           color="primary" [disabled]="!data.editPermission" 
+           (click)="editInterB2bMarketCustomer(interB2bMarketDetailsForm, row)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button [disabled]="!data.deletePermission" mat-icon-button mat-sm-button color="accent" (click)="deleteInterB2bMarketCustomer(interB2bMarketDetailsForm, row)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</form>
+<div>
+</div>

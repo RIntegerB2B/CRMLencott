@@ -1,0 +1,478 @@
+<form [formGroup]="accessForm" class="p-3" novalidate 
+style="padding-top:60px; padding-bottom:60px" (ngSubmit)="sendPermission(accessForm)">
+  <div fxLayout="row">
+    <div fxFlex="30%">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="User Type" formControlName="userType">
+      </mat-form-field>
+    </div>
+    <div fxFlex="30%">
+
+    </div>
+    <div fxFlex="30%">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Date" formControlName="currentDate">
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="pb-3 text-secondary" fxLayout="row">
+    <div fxFlex="25%">DB Name</div>
+    <div fxFlex="15%">Add</div>
+    <div fxFlex="15%">Edit</div>
+    <div fxFlex="15%">Delete</div>
+    <div fxFlex="15%">Sms</div>
+    <div fxFlex="15%">Email</div>
+  </div>
+  <div formGroupName="b2bCustomer" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">B2B Customer</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="b2bMarket" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">B2B Market</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="b2cCustomer" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">B2C Customer</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="b2cMarket" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">B2C Market</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="employee" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">Employee</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="vendor" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">Vendoer</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="agent" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">Agent</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="others" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">Others</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+
+  <!-- international  -->
+  <div formGroupName="interB2bCustomer" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">International B2B Customer</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="interB2bMarket" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">International B2B Market</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="interB2cCustomer" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">International B2C Customer</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div formGroupName="interB2cMarket" class="pb-3" fxLayout="row">
+    <div fxFlex="25%">International B2C Market</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="addPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="editPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="deletePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="smsPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="emailPermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+  </div>
+  <div class="text-center">
+    <h5>Menu List</h5>
+  </div>
+  <div formGroupName="menuList">
+    <div class="pb-3 text-secondary" fxLayout="row">
+      <div fxFlex="25%">National</div>
+      <div fxFlex="15%">B2B Customer </div>
+      <div fxFlex="15%">B2B Market</div>
+      <div fxFlex="15%">B2C Customer</div>
+      <div fxFlex="15%">B2C Market</div>
+      <div fxFlex="15%">Employee</div>
+    </div>
+    <div class="pb-3" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="b2bCustomerPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="b2bMarketPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="b2cCustomerPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="b2cMarketPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="employeePermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+    </div>
+    <div class="pb-3 text-secondary" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">Vendor</div>
+      <div fxFlex="15%">Agent</div>
+      <div fxFlex="15%">Others</div>
+      <div fxFlex="15%">Upload</div>
+      <div fxFlex="15%"></div>
+    </div>
+    <div class="pb-3" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="vendorPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="agentPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="othersPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="uploadPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+      </div>
+    </div>
+    <div class="pb-3 text-secondary" fxLayout="row">
+      <div fxFlex="25%">International</div>
+      <div fxFlex="15%">B2B Customer </div>
+      <div fxFlex="15%">B2B Market</div>
+      <div fxFlex="15%">B2C Customer</div>
+      <div fxFlex="15%">B2C Market</div>
+      <div fxFlex="15%">Upload</div>
+    </div>
+    <div class="pb-3" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="interB2bCustomerPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="interB2bMarketPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="interB2cCustomerPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="interB2cMarketPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="interUploadPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+    </div>
+    <div class="pb-3 text-secondary" fxLayout="row">
+      <div fxFlex="25%">Marketing </div>
+      <div fxFlex="15%">SMS</div>
+      <div fxFlex="15%">Email</div>
+      <div fxFlex="15%"></div>
+      <div fxFlex="15%"></div>
+      <div fxFlex="15%"></div>
+    </div>
+    <div class="pb-3" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="smsMenuPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="emailMenuPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+
+      </div>
+      <div fxFlex="15%">
+
+      </div>
+      <div fxFlex="15%">
+      </div>
+    </div>
+    <div class="pb-3 text-secondary" fxLayout="row">
+      <div fxFlex="25%">Settings</div>
+      <div fxFlex="15%">User</div>
+      <div fxFlex="15%">Register</div>
+      <div fxFlex="15%">Message</div>
+      <div fxFlex="15%">Backup</div>
+      <div fxFlex="15%"></div>
+    </div>
+    <div class="pb-3" fxLayout="row">
+      <div fxFlex="25%"></div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="userPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="registerPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="messagePermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+        <mat-checkbox formControlName="backupPermission" class="mail-checkbox">
+        </mat-checkbox>
+      </div>
+      <div fxFlex="15%">
+      </div>
+    </div>
+  </div>
+  <div class="text-center">
+    <h5>Mobile Permission</h5>
+  </div>
+  <div class="pb-3" fxLayout="row">
+    <div fxFlex="25%">Mobile View Permission</div>
+    <div fxFlex="15%">
+      <mat-checkbox formControlName="mobilePermission" class="mail-checkbox">
+      </mat-checkbox>
+    </div>
+    <div fxFlex="15%">
+     
+    </div>
+    <div fxFlex="15%">
+     
+    </div>
+    <div fxFlex="15%">
+
+    </div>
+    <div fxFlex="15%">
+    </div>
+  </div>
+  <button mat-raised-button color="accent">Submit</button>
+</form>

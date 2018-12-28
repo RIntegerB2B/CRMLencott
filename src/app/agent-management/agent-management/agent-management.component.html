@@ -1,0 +1,95 @@
+<form [formGroup]="agentDetailsForm">
+  <div fxLayoutAlign="center center" style="padding-top: 10px">
+    <div class="textHeader">
+      <h4>AGENT DETAILS</h4>
+    </div>
+  </div>
+  
+  <div class="textHeader" fxLayout="row" fxLayoutAlign="space-around center">
+    <div class="text-center">
+      <h5>Total Agent</h5>
+      <button mat-mini-fab>
+        {{newCustomer.length}}
+      </button>
+    </div>
+    <div class="text-center" *ngFor="let data of role.agent">
+      <h5>Add Customer</h5>
+      <button [disabled]="!data.addPermission" mat-mini-fab color="warn" (click)="addCustomer(agentDetailsForm, true)">
+        <mat-icon>add_box</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="getAllAgentCustomer()">All
+        Agent</button>
+    </div>
+    <div>
+      <button mat-raised-button color="primary" (click)="duplicateAgentCustomer()">
+        Duplicate Agents</button>
+    </div>
+  </div>
+  <div fxLayout="row">
+    <div fxFlex="40%">
+    </div>
+    <div fxFlex="30%">
+      <mat-form-field>
+        <input matInput placeholder="Search" (keyup)='updateFilter($event)'>
+      </mat-form-field>
+    </div>
+    <div fxFlex="20%">
+      <div class="p-2" fxLayoutAlign="end center">
+        <select (change)="onLimitChange($event.target.value)">
+          <option *ngFor="let option of pageLimitOptions" [value]="option.value" [selected]="option.value == currentPageLimit">
+            {{ option.value }} per page
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="card" *ngFor="let data of role.agent">
+    <ngx-datatable #myTable class="material pl-5 ml-0 mr-0" [rows]="newCustomer" [columnMode]="'flex'" [headerHeight]="50"
+      [footerHeight]="50" [draggable]="false" [limit]="10" [rowHeight]="'auto'">
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="AGENT NAME" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.agentName}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column  *ngIf="role.mobilePermission; else noMobile" [sortable]="false" [draggable]="false" name="MOBILE NUMBER" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.mobileNumber}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ng-template #noMobile>
+          <ngx-datatable-column  [sortable]="false" [draggable]="false" name="MOBILE NUMBER" [flexGrow]="1">
+              <ng-template  let-row="row" ngx-datatable-cell-template>
+                **********
+              </ng-template>
+            </ngx-datatable-column>
+          </ng-template>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="ADDRESS" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.address}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="EMAIL" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          {{row?.email}}
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column [sortable]="false" [draggable]="false" name="EDIT" [flexGrow]="1">
+        <ng-template let-row="row" ngx-datatable-cell-template>
+          <button mat-icon-button mat-sm-button color="primary"
+           [disabled]="!data.editPermission"
+            (click)="editAgentCustomer(agentDetailsForm, row) ">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button mat-sm-button color="accent"
+           [disabled]="!data.deletePermission" 
+           (click)="deleteAgentCustomer(agentDetailsForm, row)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </div>
+</form>

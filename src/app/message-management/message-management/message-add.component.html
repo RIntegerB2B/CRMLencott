@@ -1,0 +1,39 @@
+
+    <div fxLayout="row">           
+                <form  class="m-5" [formGroup]="messageDetailsForm" 
+                (ngSubmit)="messageDetailsForm.valid
+                && createUserMessage(messageDetailsForm)"
+                >
+                    <div class="textHeader text-center">
+                      <h4>MESSAGE SETTING</h4>
+                    </div>
+                    <div fxLayout="row wrap" fxLayout.lt-sm="column">
+                      <div fxFlex="100" class="pr-1">
+                          <mat-form-field appearance="outline">
+                              <input matInput formControlName="messageTitle" 
+                              [ngModel]="data.messageTitle"
+                              placeholder="Message Title" required>
+                              <mat-error *ngIf="messageDetailsForm.controls['messageTitle'].errors?.required" required>
+                                Enter message Title
+                                <strong>required</strong>
+                              </mat-error>
+                            </mat-form-field>
+                          <mat-form-field appearance="outline">
+                              <textarea matInput formControlName="messageDescription" 
+                              [ngModel]="data.messageDescription"
+                             placeholder="Message Description" required>      
+                            </textarea>
+                              <mat-error *ngIf="messageDetailsForm.controls['messageDescription'].errors?.required" required>
+                                Enter Message Description
+                                <strong>required</strong>
+                              </mat-error>
+                            </mat-form-field>
+                      </div>
+                      <div fxFlex="100" class="mt-1">
+                        <button mat-raised-button color="primary">ADD</button>
+                        <span fxFlex></span>
+                        <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+            </div>

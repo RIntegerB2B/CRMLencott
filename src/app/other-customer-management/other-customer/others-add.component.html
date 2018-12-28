@@ -1,0 +1,63 @@
+<form [formGroup]="othersDetailsForm" (ngSubmit)="othersDetailsForm.valid && addMember(othersDetailsForm)">
+        <div fxLayout="row wrap" fxLayout.lt-sm="column">
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="name" placeholder="Name" required>
+              <mat-error *ngIf="othersDetailsForm.controls['name'].errors?.required" required>
+                Name
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="gender" placeholder="Gender" [required]="false">
+              <mat-error *ngIf="othersDetailsForm.controls['gender'].errors?.required">
+                Enter Gender
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="mobileNumber" placeholder="Mobile Number" [required]="false">
+              <mat-error *ngIf="othersDetailsForm.controls['mobileNumber'].errors?.required">
+                Enter Mobile No
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="email" placeholder="Email" [required]="false">
+              <mat-error *ngIf="othersDetailsForm.controls['email'].errors?.required">
+                Enter Email
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput formControlName="location" placeholder="Location" [required]="false">
+              <mat-error *ngIf="othersDetailsForm.controls['location'].errors?.required">
+                Enter Location
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="50" class="pr-1">
+            <mat-form-field class="full-width">
+              <input matInput placeholder="address" formControlName="address" [required]="false">
+              <mat-error *ngIf="othersDetailsForm.controls['address'].errors?.required">
+                Enter Address
+                <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div fxFlex="100" class="mt-1">
+            <button mat-raised-button color="primary">Save</button>
+            <span fxFlex></span>
+            <button mat-raised-button mat-button color="warn" type="button" (click)="cancel()">Cancel</button>
+          </div>
+        </div>
+      </form>

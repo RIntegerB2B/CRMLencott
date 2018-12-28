@@ -1,0 +1,57 @@
+<div class="textHeader m-2" fxLayout="row" fxLayoutAlign="center center">
+    <div class="text-center">
+      <h5>Add Message</h5>
+      <button mat-mini-fab color="warn"
+       (click)="addMessage(messageDetailsForm, true)">
+        <mat-icon>add_box</mat-icon>
+      </button>
+    </div>
+  </div>
+<ngx-datatable class="material pl-5 ml-0 mr-0" 
+      [rows]="newMessage" [columnMode]="'force'" [externalPaging]="false"
+         [headerHeight]="50" [footerHeight]="50" [draggable]="false" [limit]="10"
+        [rowHeight]="'auto'">
+        <ngx-datatable-column [sortable]="false" [draggable]="false" name="Message Title"
+         [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row?.messageTitle}}
+          </ng-template>
+        </ngx-datatable-column>
+        
+        <ngx-datatable-column [sortable]="false" [draggable]="false" 
+        name="Message Description" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            {{row?.messageDescription}}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="false" [draggable]="false" 
+        [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="false" [draggable]="false"
+        name="EDIT" [flexGrow]="1">
+         <ng-template let-row="row" ngx-datatable-cell-template>
+           <button
+            mat-icon-button mat-sm-button color="primary" 
+            (click)="getEditMessage(messageDetailsForm, row)"
+            >
+             <mat-icon>edit</mat-icon>
+           </button>
+         </ng-template>
+       </ngx-datatable-column>
+        <ngx-datatable-column [sortable]="false" [draggable]="false"
+         name="DELETE" [flexGrow]="1">
+          <ng-template let-row="row" ngx-datatable-cell-template>
+            <button
+             mat-icon-button mat-sm-button color="accent" 
+             (click)="getDeleteMessage(messageDetailsForm, row)"
+             >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </ng-template>
+        </ngx-datatable-column>
+      </ngx-datatable>
+    
+      

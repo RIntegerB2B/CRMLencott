@@ -1,0 +1,75 @@
+<form [formGroup]="employeeDetailsForm">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="empName" [ngModel]="data.empName" (ngModelChange)="data.empName=$event"
+          placeholder="Employee Name">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="empNo" [ngModel]="data.empNo" (ngModelChange)="data.empNo=$event"
+            placeholder="Employee No">
+        </mat-form-field>
+      </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber" [ngModel]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event"
+          placeholder="Mobile Number">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="whatsAppNo" [ngModel]="data.whatsAppNo" (ngModelChange)="data.whatsAppNo=$event"
+            placeholder="Whatsapp No">
+        </mat-form-field>
+      </div>
+
+    
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email" [ngModel]="data.email" (ngModelChange)="data.email=$event" name="email"
+          placeholder="email">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="dateOfBirth" [ngModel]="data.dateOfBirth" (ngModelChange)="data.email=$event" name="Date Of Birth"
+            placeholder="Date Of Birth">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="dateOfBirth" [ngModel]="data.dateOfBirth" (ngModelChange)="data.email=$event" name="Date Of Birth"
+            placeholder="Date Of Birth">
+        </mat-form-field>
+      </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="dateOfJoin"
+           [ngModel]="data.dateOfJoin" (ngModelChange)="data.dateOfJoin=$event" name="dateOfJoin"
+            placeholder="Date Of Join">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="designation"
+           [ngModel]="data.designation" (ngModelChange)="data.designation=$event" name="Designation"
+            placeholder="Designation">
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+          <mat-form-field class="full-width">
+            <input matInput formControlName="address"
+             [ngModel]="data.address" (ngModelChange)="data.address=$event" name="Address"
+              placeholder="Address">
+          </mat-form-field>
+        </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary" (click)=" updateEmployee(employeeDetailsForm, data)">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button  color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

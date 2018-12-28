@@ -1,0 +1,90 @@
+<form [formGroup]="agentDetailsForm">
+  <div fxLayout="row wrap" fxLayout.lt-sm="column">
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentName" [ngModel]="data.agentName"
+         (ngModelChange)="data.agentName=$event"
+          placeholder="AGENT NAME">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="mobileNumber"
+         [ngModel]="data.mobileNumber"
+          (ngModelChange)="data.mobileNumber=$event"
+          placeholder="Mobile Number">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="whatsAppNo" 
+        [ngModel]="data.whatsAppNo"
+         (ngModelChange)="data.whatsAppNo=$event"
+          placeholder="Whats AppNo">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="landLine"
+         [ngModel]="data.landLine" (ngModelChange)="data.landLine=$event"
+          placeholder="land Line">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="address"
+        [ngModel]="data.address"
+         (ngModelChange)="data.address=$event" name="address"
+          placeholder="address">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="email"
+         [ngModel]="data.email"
+          (ngModelChange)="data.email=$event" name="email"
+          placeholder="email">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentService" [ngModel]="data.agentService" (ngModelChange)="data.agentService=$event"
+          name="agentService" placeholder="agentService">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentCompanyName" [ngModel]="data.agentService" (ngModelChange)="data.agentCompanyName=$event"
+          name="agentCompanyName" placeholder="Agent Company Name">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="companyAddress"
+         [ngModel]="data.companyAddress" 
+         (ngModelChange)="data.companyAddress=$event"
+          name="companyAddress" placeholder= "Company Address">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="gstNumber" [ngModel]="data.gstNumber" (ngModelChange)="data.gstNumber=$event"
+          name="gstNumber" placeholder="Gst Number">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="agentGrade"
+         [ngModel]="data.agentGrade"
+          (ngModelChange)="data.agentGrade=$event"
+          name="agentGrade" placeholder="Agent Grade">
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary" (click)="updateAgentCustomer(agentDetailsForm, data)">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>

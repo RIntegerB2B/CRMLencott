@@ -1,0 +1,94 @@
+<form  [formGroup]="customerDetailsForm" (ngSubmit)="update(customerDetailsForm, data)">
+<div fxLayout="row wrap" fxLayout.lt-sm="column">
+<div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput  formControlName="customerName"  [ngModel]="data.customerName" (ngModelChange)="data.customerName=$event"
+          placeholder="Customer Name" required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput   formControlName="mobileNumber" 
+        [ngModel]="data.mobileNumber" (ngModelChange)="data.mobileNumber=$event"
+          placeholder="Mobile Number" required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="whatsAppNo" 
+          [ngModel]="data.whatsAppNo" (ngModelChange)="data.whatsAppNo=$event"
+          placeholder="whatsapp No"
+          required>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="landLine" placeholder="Landline"
+        [ngModel]="data.landLine" (ngModelChange)="data.landLine=$event"
+        required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput  
+         formControlName="location"
+          [ngModel]="data.location" (ngModelChange)="data.location=$event"
+          name="location" placeholder="Location">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput  formControlName="email"  [ngModel]="data.email" (ngModelChange)="data.email=$event"
+          name="email" placeholder="email">
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="companyName"
+        [ngModel]="data.companyName" (ngModelChange)="data.companyName=$event"
+         placeholder="Company Name"
+        required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="companyAddress" 
+        [ngModel]="data.companyAddress" (ngModelChange)="data.companyAddress=$event"
+        placeholder="Company Address"
+        required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="gstNumber"
+        [ngModel]="data.gstNumber" (ngModelChange)="data.gstNumber=$event"
+         placeholder="GST Number"
+        required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+      <mat-form-field class="full-width">
+        <input matInput formControlName="customerGrade" 
+        [ngModel]="data.customerGrade" (ngModelChange)="data.customerGrade=$event"
+        placeholder="Company Grade"
+        required>
+      </mat-form-field>
+    </div>
+    <div fxFlex="50" class="pr-1">
+        <mat-form-field class="full-width">
+          <input matInput formControlName="brandName" 
+          [ngModel]="data.brandName" (ngModelChange)="data.brandName=$event"
+          placeholder="Brand Name"
+          required>
+        </mat-form-field>
+      </div>
+
+    <div fxFlex="100" class="mt-1">
+      <button mat-raised-button color="primary">Save</button>
+      <span fxFlex></span>
+      <button mat-raised-button mat-button color="warn" type="button"
+       (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</form>
