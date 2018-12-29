@@ -286,7 +286,7 @@
                 class="inbox-toggle-all mr-1"><b>{{template.messageTitle}}</b></mat-checkbox>
             </div>
           </div>
-          <div class="col-md-4 border-right">
+          <!-- <div class="col-md-4 border-right">
             <div for="comment" class="textHeader"><b>Payment Reminder</b></div>
             <div fxLayout="row wrap" fxLayout.lt-sm="column">
               <div *ngIf="showBillDetails" class="alert alert-danger">
@@ -338,19 +338,8 @@
                 <button mat-raised-button mat-button (click)="getLlrDetails()" color="accent" type="button">ADD</button>
               </div>
             </div>
-            <!-- static messages -->
-           <!--  <div for="comment" class="textHeader"><b>Message Template</b></div> -->
-          <!--   <div class="mt-3" fxLayout="row wrap" *ngFor="let messageText of messageTemplate; let i = index"
-              fxLayout.lt-sm="column">
-              <div fxFlex="10%">
-                <mat-checkbox [checked]="selectedValue === i" (change)="selectedValue = i" (change)="setMessageTemplate($event, messageText.title)">
-                </mat-checkbox>
-              </div>
-              <div fxFlex="90%">
-                <b>{{messageText.title}}</b>
-              </div>
-            </div> -->
-          </div>
+           
+          </div> -->
           <div class="col-md-4">
             <label for="comment" class="textHeader"><b>Selected Mobile Number</b></label>
             <mat-form-field class="example-full-width">
