@@ -6,6 +6,7 @@ import { Register } from '../register/register.model';
 import { AuthService } from '../auth.service';
 import { AccessPermission } from '../permission/accessPermission.model';
 import { HeaderSideService } from '../../shared/header-side/header-side.service';
+import { AppSetting } from '../../config/appSetting';
 
 @Component({
   selector: 'app-permission',
@@ -18,6 +19,7 @@ export class PermissionComponent implements OnInit {
   selectedPermissions = [];
   accessPermission: AccessPermission;
   message: Register;
+  serviceUrl: string = AppSetting.serviceUrl;
 
 
   constructor(
@@ -31,6 +33,7 @@ export class PermissionComponent implements OnInit {
   ngOnInit() {
     this.getAllRegister();
     this.userAccess();
+    console.log('url', this.serviceUrl);
   }
 
   userAccess() {
@@ -192,9 +195,9 @@ export class PermissionComponent implements OnInit {
       accessForm.controls.menuList.value,
       accessForm.controls.mobilePermission.value
     );
-    console.log(this.accessPermission);
+    /* console.log(this.accessPermission); */
     this.userManagementService.permissionUsers(this.accessPermission).subscribe(data => {
-      console.log(data);
+      console.log('stored data', data);
     }, error => {
       console.log(error);
     });
