@@ -1,12 +1,11 @@
 {
-  "name": "lencott-crm",
+  "name": "rinteger-crm",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "pre-deployBat": "pre-deploy.bat",
-    "build": "ng build --prod --base-href /admin/crm/",
-    "deployBat": "deploy.bat",
+    "build": "ng build --prod",
     "deploy": "npm run pre-deployBat && npm run build && npm run deployBat && node deployScript",
     "test": "ng test",
     "lint": "ng lint",
