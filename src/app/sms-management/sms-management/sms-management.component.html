@@ -260,19 +260,20 @@
 
       <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[100, 200, 300, 400, 500]"
         [showFirstLastButtons]="true" [length]="totalSize" [pageIndex]="currentPage" (page)="handlePage($event)">
-      </mat-paginator>
+      </mat-paginator>-->
      
       <div fxLayout="row">
         <div fxFlex="50%">
           <button mat-raised-button color="warn" matStepperPrevious>
             back
           </button>
-        </div>-->
+        </div>
         <div fxFlex="50%" fxLayoutAlign="end center">
           <button mat-raised-button color="warn" matStepperNext>
             next
           </button>
         </div>
+      </div> 
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Message</ng-template>
