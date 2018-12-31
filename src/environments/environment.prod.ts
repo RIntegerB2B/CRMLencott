@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serviceUrl: 'http://localhost:3031/'
+  serviceUrl: 'http://13.232.45.85/crmservice/'
 };
