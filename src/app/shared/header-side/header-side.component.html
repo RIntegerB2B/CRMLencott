@@ -150,10 +150,10 @@
             </div>
           </div>
         </div>
-        <mat-list-item (click)="showInternational = !showInternational" class="parent">
+      <!--   <mat-list-item (click)="showInternational = !showInternational" class="parent">
           <span *ngIf="isExpanded || isShowing">International DB Mgmt</span>
           <mat-icon class="menu-button" [ngClass]="{'rotated' : showInternational}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-        </mat-list-item>
+        </mat-list-item> -->
         <div class="submenu" [ngClass]="{'expanded' : showInternational}" *ngIf="showInternational">
           <div id="scroll-area" class="navigation-hold" fxLayout="column">
             <div class="sidenav-hold" *ngFor="let menus of role.menuList">

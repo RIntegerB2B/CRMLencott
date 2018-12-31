@@ -32,7 +32,7 @@ import { Component, Inject } from '@angular/core';
     type="button"
     color="warn"
     mat-raised-button
-    (click)="dialogRef.close(false)">Cancel</button>
+    (click)="dialogRef.close(false)">OK</button>
     </div>`,
 })
 export class AlertComponent {
